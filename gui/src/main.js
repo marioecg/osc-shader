@@ -53,42 +53,51 @@ const gui = new GUI({ container })
 gui.add(params, 'zoom', 0, 10, 0.01).onChange((value) => sendOSC('u_zoom', value))
 gui.add(params, 'progress', 0, 1, 0.01).onChange((value) => sendOSC('u_progress', value))
 
-gui.add(params.brightness, 'r', 0, 1, 0.01).onChange(() => {
+const colorf = gui.addFolder('color')
+const brightnessf = colorf.addFolder('brightness')
+
+brightnessf.add(params.brightness, 'r', 0, 1, 0.01).onChange(() => {
     sendOSC('u_brightness', [params.brightness.r, params.brightness.g, params.brightness.b])
 })
-gui.add(params.brightness, 'g', 0, 1, 0.01).onChange(() => {
+brightnessf.add(params.brightness, 'g', 0, 1, 0.01).onChange(() => {
     sendOSC('u_brightness', [params.brightness.r, params.brightness.g, params.brightness.b])
 })
-gui.add(params.brightness, 'b', 0, 1, 0.01).onChange(() => {
+brightnessf.add(params.brightness, 'b', 0, 1, 0.01).onChange(() => {
     sendOSC('u_brightness', [params.brightness.r, params.brightness.g, params.brightness.b])
 })
 
-gui.add(params.contrast, 'r', 0, 1, 0.01).onChange(() => {
+const contrastf = colorf.addFolder('contrast')
+
+contrastf.add(params.contrast, 'r', 0, 1, 0.01).onChange(() => {
     sendOSC('u_contrast', [params.contrast.r, params.contrast.g, params.contrast.b])
 })
-gui.add(params.contrast, 'g', 0, 1, 0.01).onChange(() => {
+contrastf.add(params.contrast, 'g', 0, 1, 0.01).onChange(() => {
     sendOSC('u_contrast', [params.contrast.r, params.contrast.g, params.contrast.b])
 })
-gui.add(params.contrast, 'b', 0, 1, 0.01).onChange(() => {
+contrastf.add(params.contrast, 'b', 0, 1, 0.01).onChange(() => {
     sendOSC('u_contrast', [params.contrast.r, params.contrast.g, params.contrast.b])
 })
 
-gui.add(params.oscillation, 'r', 0, 1, 0.01).onChange(() => {
+const oscillationf = colorf.addFolder('oscillation')
+
+oscillationf.add(params.oscillation, 'r', 0, 1, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
-gui.add(params.oscillation, 'g', 0, 1, 0.01).onChange(() => {
+oscillationf.add(params.oscillation, 'g', 0, 1, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
-gui.add(params.oscillation, 'b', 0, 1, 0.01).onChange(() => {
+oscillationf.add(params.oscillation, 'b', 0, 1, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
 
-gui.add(params.phase, 'r', 0, 1, 0.01).onChange(() => {
+const phasef = colorf.addFolder('phase')
+
+phasef.add(params.phase, 'r', 0, 1, 0.01).onChange(() => {
     sendOSC('u_phase', [params.phase.r, params.phase.g, params.phase.b])
 })
-gui.add(params.phase, 'g', 0, 1, 0.01).onChange(() => {
+phasef.add(params.phase, 'g', 0, 1, 0.01).onChange(() => {
     sendOSC('u_phase', [params.phase.r, params.phase.g, params.phase.b])
 })
-gui.add(params.phase, 'b', 0, 1, 0.01).onChange(() => {
+phasef.add(params.phase, 'b', 0, 1, 0.01).onChange(() => {
     sendOSC('u_phase', [params.phase.r, params.phase.g, params.phase.b])
 })
