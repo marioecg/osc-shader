@@ -10,7 +10,7 @@ const params = {
 }
 
 /* --------------------------------- Socket --------------------------------- */
-const socket = new WebSocket('ws://192.168.1.11:8081')
+const socket = new WebSocket('ws://localhost:8081')
 
 socket.addEventListener('open', () => {
     console.log('Connected to OSC bridge')

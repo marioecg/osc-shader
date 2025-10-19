@@ -13,7 +13,7 @@ udpPort.open()
 
 /* -------------------------------- WebSocket ------------------------------- */
 // Browser will connect to this WebSocket server
-const wss = new WebSocketServer({ host: '0.0.0.0', port: 8081 })
+const wss = new WebSocketServer({ port: 8081 })
 console.log('WebSocket server running on ws://localhost:8081')
 
 wss.on('connection', (ws) => {
