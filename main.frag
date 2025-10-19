@@ -17,7 +17,7 @@ void main() {
 #if defined(BUFFER_0)
     color.rg = st;
 #else
-    color = texture2D(u_buffer0, st);
+    color = texture2D(u_buffer0, st).rgb;
 #endif
 
     gl_FragColor = vec4(color, 1.0);
