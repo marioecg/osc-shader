@@ -10,7 +10,16 @@ A small setup that uses [lil-gui](https://lil-gui.georgealways.com/) to send OSC
 glslViewer main.frag -p 4000
 ```
 
-### 2. Start the GUI
+### 2. Run the OSC server
+
+Navigate to the `server/`, start the Node.js server to forward OSC messages from the GUI:
+
+```bash
+cd server
+node index.js
+```
+
+### 3. Start the GUI
 
 Navigate to the `gui/` folder and run the development server:
 
@@ -19,11 +28,3 @@ cd gui
 npm run dev
 ```
 
-### 3. Run the OSC server
-
-Navigate to the `server/`, start the Node.js server to forward OSC messages from the GUI:
-
-```bash
-cd server
-node index.js
-```
