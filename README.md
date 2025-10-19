@@ -24,5 +24,6 @@ npm run dev
 Navigate to the `server/`, start the Node.js server to forward OSC messages from the GUI:
 
 ```bash
+cd server
 node index.js
 ```
