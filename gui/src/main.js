@@ -1,7 +1,7 @@
 import GUI from 'lil-gui'
 
 const params = {
-    zoom: 1.0,
+    zoom: 2.0,
     progress: 0,
     brightness: { r: 0.5, g: 0.5, b: 0.5 },
     contrast: { r: 0.5, g: 0.5, b: 0.5 },
@@ -50,7 +50,7 @@ function sendOSC(address, value) {
 const container = document.getElementById('controls')
 const gui = new GUI({ container })
 
-gui.add(params, 'zoom', 0, 10, 0.01).onChange((value) => sendOSC('u_zoom', value))
+gui.add(params, 'zoom', 0, 5, 0.01).onChange((value) => sendOSC('u_zoom', value))
 gui.add(params, 'progress', 0, 1, 0.01).onChange((value) => sendOSC('u_progress', value))
 
 const colorf = gui.addFolder('color')
@@ -80,13 +80,13 @@ contrastf.add(params.contrast, 'b', 0, 1, 0.01).onChange(() => {
 
 const oscillationf = colorf.addFolder('oscillation')
 
-oscillationf.add(params.oscillation, 'r', 0, 1, 0.01).onChange(() => {
+oscillationf.add(params.oscillation, 'r', 0, 2, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
-oscillationf.add(params.oscillation, 'g', 0, 1, 0.01).onChange(() => {
+oscillationf.add(params.oscillation, 'g', 0, 2, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
-oscillationf.add(params.oscillation, 'b', 0, 1, 0.01).onChange(() => {
+oscillationf.add(params.oscillation, 'b', 0, 2, 0.01).onChange(() => {
     sendOSC('u_oscillation', [params.oscillation.r, params.oscillation.g, params.oscillation.b])
 })
 
