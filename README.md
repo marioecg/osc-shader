@@ -1,4 +1,4 @@
-# osc-shader-test
+# OSC Shader
 
 A small setup that uses [lil-gui](https://lil-gui.georgealways.com/) to send OSC messages to [GlslViewer](https://github.com/patriciogonzalezvivo/glslViewer), enabling real-time manipulation of shader uniforms.
 
