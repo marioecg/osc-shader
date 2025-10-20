@@ -16,6 +16,7 @@ Navigate to the `server/`, start the Node.js server to forward OSC messages from
 
 ```bash
 cd server
+npm i
 node index.js
 ```
 
@@ -25,6 +26,7 @@ Navigate to the `gui/` folder and run the development server:
 
 ```bash
 cd gui
+npm i
 npm run dev
 ```
 
